@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div><strong></strong></div>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+            <div href="" class="mdl-card__title mdl-card--expand" id="catalog">
+                <h2 class="mdl-card__title-text homeLabel" style="font-size:14px;">KUNDEPROFILERING</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                Overblik over kundeprofileringer
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored" asp-controller="Catalog" asp-action="Index">
+                Se kundeprofileringer
+            </a>
+            <a class="mdl-button mdl-button--colored" asp-controller="Catalog" asp-action="Kunde">
+                Foretag en Kundeprofilering
+            </a>
+        </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand" id="patrons">
+                <h2 class="mdl-card__title-text homeLabel" style="font-size:14px;">KUNDER</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                Se og administerer kundeoversigt
+            </div>
+
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored" asp-controller="Patron" asp-action="Index">
+                Se kundeoversigt
+            </a>
+        </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand" id="branches">
+                <h2 class="mdl-card__title-text homeLabel" style="font-size:14px;">BANKER</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                Se og administerer bankoversigt
+            </div>
+
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored" asp-controller="Branch" asp-action="Index">
+                Se bankoversigt
+            </a>
+        </div>
+    </div>
+</div>

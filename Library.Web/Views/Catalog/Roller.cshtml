@@ -1,0 +1,36 @@
+﻿@using Library.Web.Models.Catalog
+@model Library.Web.Models.Catalog.AssetIndexModel
+@{
+    ViewBag.Title = "Library Catalog Index";
+}
+
+<div id="Roller">
+    <h3>Her styres de roller som har adgang til systemet + login</h3>
+    <table>
+        <tr><td width="200">Kunder</td>
+    </table>
+    <table>
+        <tr><td width="200">Bankrådgivere</td>
+    </table>
+</div>
+<table>
+    <tr><td width="200">Systemadministratorer</td>
+</table>
+
+
+@section Styles {
+    <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+}
+@section Scripts {
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#catalogIndexTable').DataTable();
+        });
+    </script>
+}

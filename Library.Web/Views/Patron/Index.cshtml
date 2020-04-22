@@ -1,0 +1,34 @@
+﻿@using Library.Web.Models.Patron
+@model Library.Web.Models.Patron.PatronIndexModel
+@{
+    ViewBag.Title = "Patron Index";
+}
+<h3>Kundeoversigt</h3>
+<div id="patronIndex">
+    <table><tr><td>Oversigt over de kunder som er tilknyttet systemet</td></tr></table>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="patronIndexTable">
+        <thead>
+            <tr>
+                <th>Profile Link</th>
+                <th>Efternavn</th>
+                <th>Fornavn</th>
+                <th>Bank</th>
+                <th>Lån</th>
+                <th>Kundeprofilering</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var patron in Model.Patrons)
+            {
+                <tr>
+                    <td id="patronIcon"><a asp-controller="Patron" asp-action="Detail" asp-route-id="@patron.Id"><i class="fa fa-user fa-2x"></i></a></td>
+                    <td>@patron.LastName</td>
+                    <td>@patron.FirstName</td>
+                    <td>@patron.Bank</td>
+                    <td>@patron.Laan</td>
+                    <td>@patron.Kp</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
