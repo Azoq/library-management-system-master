@@ -15,19 +15,15 @@ namespace Library.Tests.Controllers
     [TestFixture]
     public class CatalogControllerShould
     {
-        private static IEnumerable<LibraryAsset> GetAllAssets()
+        private static IEnumerable<ProfilingAsset> GetAllAssets()
         {
-            return new List<LibraryAsset>
+            return new List<ProfilingAsset>
             {
-                new Book
+                new Profiling
                 {
                     Title = "Orlando",
                     Author = "Virginia Woolf",
                     ImageUrl = "foo",
-                    {
-                        Name = "Checked In",
-                        Id = 1
-                    }
                 },
             };
         }

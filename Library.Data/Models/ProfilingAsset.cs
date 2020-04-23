@@ -2,8 +2,9 @@
 
 namespace Library.Data.Models
 {
-    public abstract class LibraryAsset
+    public abstract class ProfilingAsset
     {
+        // connectedf ProfilingAsset to bring in questions
         public int Id { get; set; }
 
         [Required] public string Title { get; set; }
@@ -13,5 +14,7 @@ namespace Library.Data.Models
         [Display(Name = "Cost of Replacement")]
         public string ImageUrl { get; set; }
         public virtual LibraryBranch Location { get; set; }
+        public string Q1 { get; set; }
+
     }
 }

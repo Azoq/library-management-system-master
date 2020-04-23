@@ -13,12 +13,12 @@ namespace Library.Data
         {
         }
 
-        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Profiling> Books { get; set; }
 
         public virtual DbSet<LibraryBranch> LibraryBranches { get; set; }
         public virtual DbSet<BranchHours> BranchHours { get; set; }
         public virtual DbSet<Patron> Patrons { get; set; }
         public virtual DbSet<Status> Statuses { get; set; }
-        public virtual DbSet<LibraryAsset> LibraryAssets { get; set; }
+        public virtual DbSet<ProfilingAsset> LibraryAssets { get; set; }
     }
 }

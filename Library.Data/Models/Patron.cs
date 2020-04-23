@@ -5,6 +5,8 @@ namespace Library.Data.Models
 {
     public class Patron
     {
+        //Customer information
+        
         public int Id { get; set; }
 
         [Required]

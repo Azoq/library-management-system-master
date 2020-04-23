@@ -21,7 +21,7 @@ namespace Library.Data.Models
         public DateTime OpenDate { get; set; }
 
         public virtual IEnumerable<Patron> Patrons { get; set; }
-        public virtual IEnumerable<LibraryAsset> LibraryAssets { get; set; }
+        public virtual IEnumerable<ProfilingAsset> LibraryAssets { get; set; }
 
         public string ImageUrl { get; set; }
     }

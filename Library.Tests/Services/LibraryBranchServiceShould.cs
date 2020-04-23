@@ -55,9 +55,9 @@ namespace Library.Tests.Services
                             FirstName = "Mark"
                         }
                     },
-                    LibraryAssets = new List<LibraryAsset>
+                    LibraryAssets = new List<ProfilingAsset>
                     {
-                        new Book
+                        new Profiling
                         {
                             Id = 1,
                             Title = "CTCI",

@@ -15,13 +15,13 @@ namespace Library.Service
             _context = context;
         }
 
-        public void Add(LibraryAsset newAsset)
+        public void Add(ProfilingAsset newAsset)
         {
             _context.Add(newAsset);
             _context.SaveChanges();
         }
 
-        public LibraryAsset Get(int id)
+        public ProfilingAsset Get(int id)
         {
             return _context.LibraryAssets
                 .Include(a => a.Status)
@@ -29,7 +29,7 @@ namespace Library.Service
                 .FirstOrDefault(a => a.Id == id);
         }
 
-        public IEnumerable<LibraryAsset> GetAll()
+        public IEnumerable<ProfilingAsset> GetAll()
         {
             return _context.LibraryAssets
                 .Include(a => a.Status)
@@ -89,7 +89,7 @@ namespace Library.Service
         {
             // Hack
             var book = _context.LibraryAssets
-                .OfType<Book>().SingleOrDefault(a => a.Id == id);
+                .OfType<Profiling>().SingleOrDefault(a => a.Id == id);
             return book != null ? "Book" : "Video";
         }
     }

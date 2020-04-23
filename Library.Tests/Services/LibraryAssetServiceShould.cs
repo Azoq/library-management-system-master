@@ -14,11 +14,11 @@ namespace Library.Tests.Services
     [TestFixture]
     public class LibraryAssetServiceShould
     {
-        private static IEnumerable<LibraryAsset> GetAssets()
+        private static IEnumerable<ProfilingAsset> GetAssets()
         {
-            return new List<LibraryAsset>
+            return new List<ProfilingAsset>
             {
-                new Book
+                new Profiling
                 {
                     Id = 1223,
                     Title = "Infinite Jest",
@@ -26,24 +26,23 @@ namespace Library.Tests.Services
                     DeweyIndex = "WAL111"
                 },
 
-                new Book
+                new Profiling
                 {
                     Id = -903,
                     Title = "Beyond the Bedroom Wall",
                     Location = new LibraryBranch {Id = 200},
-                    ISBN = "FOO"
                 },
             };
         }
 
-        private Mock<DbSet<LibraryAsset>> BuildMock()
+        private Mock<DbSet<ProfilingAsset>> BuildMock()
         {
             var assets = GetAssets().AsQueryable();
-            var mockSet = new Mock<DbSet<LibraryAsset>>();
-            mockSet.As<IQueryable<LibraryAsset>>().Setup(b => b.Provider).Returns(assets.Provider);
-            mockSet.As<IQueryable<LibraryAsset>>().Setup(b => b.Expression).Returns(assets.Expression);
-            mockSet.As<IQueryable<LibraryAsset>>().Setup(b => b.ElementType).Returns(assets.ElementType);
-            mockSet.As<IQueryable<LibraryAsset>>().Setup(b => b.GetEnumerator()).Returns(assets.GetEnumerator());
+            var mockSet = new Mock<DbSet<ProfilingAsset>>();
+            mockSet.As<IQueryable<ProfilingAsset>>().Setup(b => b.Provider).Returns(assets.Provider);
+            mockSet.As<IQueryable<ProfilingAsset>>().Setup(b => b.Expression).Returns(assets.Expression);
+            mockSet.As<IQueryable<ProfilingAsset>>().Setup(b => b.ElementType).Returns(assets.ElementType);
+            mockSet.As<IQueryable<ProfilingAsset>>().Setup(b => b.GetEnumerator()).Returns(assets.GetEnumerator());
             return mockSet;
         }
 
@@ -58,7 +57,7 @@ namespace Library.Tests.Services
             {
                 var service = new LibraryAssetService(context);
 
-                service.Add(new Book
+                service.Add(new Profiling
                 {
                     Id = -27
                 });
@@ -77,7 +76,7 @@ namespace Library.Tests.Services
             var sut = new LibraryAssetService(mockCtx.Object);
             var queryResult = sut.GetAll().ToList();
 
-            queryResult.Should().AllBeAssignableTo(typeof(LibraryAsset));
+            queryResult.Should().AllBeAssignableTo(typeof(ProfilingAsset));
             queryResult.Should().HaveCount(3);
             queryResult.Should().Contain(a => a.Title == "Infinite Jest");
         }
